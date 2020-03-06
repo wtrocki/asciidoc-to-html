@@ -1,0 +1,21 @@
+name: 'Asciidoc to html'
+description: 'convert to html from .adoc'
+author: 'mougenko'
+inputs: 
+  src:
+    description: 'convert src directory name'
+    required: true
+  dest:
+    description: 'convert destination directory name'
+    required: true
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.src }}
+    - ${{ inputs.dest }}
+
+branding:
+  icon: 'chevron-right'
+  color: 'gray-dark'
